@@ -14,6 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::get('/teste', 'API\PaymentController@process');
+
+Route::post(
+'/dados-financeiros',
+'ContabilidadeEmpresaController@importaArquivoDadosFinanceiros'
+);
+
+Route::get(
+    '/empresas',
+    'EmpresaController@all'
+);
+
+Route::get(
+    '/empresas/{id}',
+    'EmpresaController@get'
+);
