@@ -38,13 +38,16 @@ Nessa aplicação temos três end-points nas Controllers localizadas em: app\Htt
 <br>
 Na EmpresaController temos dois end-points:<br>
 -all: Recupera todas as empresas ordenas pela pontuação, e devolve os dados pertinentes para a listagem usando EmpresaResource como DTO.<br>
--get: Retorna a empresa com o id especificado.<br>
+-get: Retorna a empresa com o id especificado, também usando EmpresaResource.<br>
 <br>
 Na ContabilidadeEmpresaController temos um end-point:<br>
--importarArquivoDadosFinanceiros: Chama o serviço de EmpresaProvider para realizar o registro das novas movimentações, bem como calcular a nova pontuação<br>
+-importarArquivoDadosFinanceiros: Recebe o id da empresa, quantidade de notas e débitos importados. Chama o serviço de EmpresaProvider para realizar o registro das novas movimentações, bem como calcular e retornar a nova pontuação<br>
 <br>
 <br>
 As regras de negócio estão em App\Services, onde também se encontra a implementação interface.
-
+<br>
+Os 4 testes desenvolvidos se encontram em tests\Feature.<br>
+Para execução dos testes, execute o seguinte comando, estando dentro do container laradock_workspace_1, e dentro do diretório raiz do projeto:<br>
+<h5>./vendor/bin/phpunit</h5>
 
 
