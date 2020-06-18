@@ -36,12 +36,12 @@ Se tudo deu certo até aqui, o projeto já deve estar rodando! :v<br>
 <br>
 Nessa aplicação temos três end-points nas Controllers localizadas em: app\Http\Controllers<br>
 <br>
-Na EmpresaController temos dois end-points:<br>
-<h5>all</h5>: Recupera todas as empresas ordenas pela pontuação, e devolve os dados pertinentes para a listagem usando EmpresaResource como DTO.<br>
-<h5>get</h5>: Retorna a empresa com o id especificado, também usando EmpresaResource.<br>
+Na EmpresaController temos dois end-points:<br><br>
+- all: Recupera todas as empresas ordenas pela pontuação, e devolve os dados pertinentes para a listagem usando EmpresaResource como DTO.<br>
+- get: Retorna a empresa com o id especificado, também usando EmpresaResource.<br>
 <br>
-Na ContabilidadeEmpresaController temos um end-point:<br>
-<h5>importarArquivoDadosFinanceiros</h5>: Recebe o id da empresa, quantidade de notas e débitos importados. Chama o serviço de EmpresaProvider para realizar o registro das novas movimentações, bem como calcular e retornar a nova pontuação<br>
+Na ContabilidadeEmpresaController temos um end-point:<br><br>
+- importarArquivoDadosFinanceiros: Recebe o id da empresa, quantidade de notas e débitos importados. Chama o serviço de EmpresaProvider para realizar o registro das novas movimentações, bem como calcular e retornar a nova pontuação<br>
 <br>
 <br>
 As regras de negócio estão em App\Services, onde também se encontra a implementação interface.
