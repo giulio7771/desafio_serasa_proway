@@ -25,7 +25,7 @@ DB_PASSWORD=root<br>
 Crie o banco de dados "serasa" no servidor MySQL do Laradock.<br> 
 <br>
 Para executar os containers execute o comando abaixo no diretório raiz onde se encontra o clone do Laradock (sugiro executar 'sudo -s' antes para não ter problemas de permissão):<br>
-docker-compose up -d nginx mysql
+<h5>docker-compose up -d nginx mysql</h5><br>
 <br>
 Entre no container do laradock: <br>
 <h5>docker exec -it laradock_workspace_1 bash</h5>
