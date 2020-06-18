@@ -8,3 +8,9 @@ O projeto pode ser executado a partir de qualquer servidor Php 5+ que rode Larav
 <br>
 Para instalar o laradock no Ubuntu sugiro esse tutorial: https://medium.com/@thicolares/como-configurar-um-ambiente-completo-php-nginx-mysql-e-phpmyadmin-para-projetos-laravel-usando-99954285351e
 <br>
+<br>
+Setup<br>
+<br>
+Tendo o laradock instalado, configurado (vide tutorial), e os containers rodando (docker-compose up -d nginx mysql), entre no container do laradock: <br>
+<h5>docker exec -it laradock_workspace_1 bash<h5>
+<br>
