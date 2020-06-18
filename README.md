@@ -25,8 +25,7 @@ DB_PASSWORD=root<br>
 Crie o banco de dados "serasa" no servidor MySQL do Laradock.<br> 
 <br>
 Para executar os containers execute o comando abaixo no diretório raiz onde se encontra o clone do Laradock (sugiro executar 'sudo -s' antes para não ter problemas de permissão):<br>
-<h5>docker-compose up -d nginx mysql</h5><br>
-<br>
+<h5>docker-compose up -d nginx mysql</h5>
 Entre no container do laradock: <br>
 <h5>docker exec -it laradock_workspace_1 bash</h5>
 <br>
@@ -47,7 +46,8 @@ Na ContabilidadeEmpresaController temos um end-point:<br><br>
 - importarArquivoDadosFinanceiros: Recebe o id da empresa, quantidade de notas e débitos importados. Chama o serviço de EmpresaProvider para realizar o registro das novas movimentações, bem como calcular e retornar a nova pontuação<br>
 <br>
 <br>
-As regras de negócio estão em App\Services, onde também se encontra a implementação interface.
+As regras de negócio estão em App\Services, onde for implementada a interface.
+<br>
 <br>
 Os 4 testes desenvolvidos se encontram em tests\Feature.<br>
 Para execução dos testes, execute o seguinte comando, estando dentro do container laradock_workspace_1, e dentro do diretório raiz do projeto:<br>
