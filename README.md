@@ -6,7 +6,54 @@ Ambiente:<br>
 
 O projeto pode ser executado a partir de qualquer servidor Php 5+ que rode Laravel. Eu utilizei o ambiente como conteiners docker Laradock, que possuem toda infraestrutura que precisamos. Tenha em mente que configurar o ambiente para esta aplicação pode ser trabalhoso e levar mais de uma hora.
 <br>
-Para instalar o laradock no Ubuntu sugiro esse tutorial: 
+Para instalar o laradock no Ubuntu:
+ 1- clone o Laradock na pasta de sua escolha
+git clone https://github.com/Laradock/laradock.git 
+
+2- Entre na pasta do projeto e renomeio env-example para .env
+cd laradock
+cp env-example .env
+
+3- Entre com permissão de adm e execute os containers básicos
+sudo -s
+docker-compose up -d nginx
+
+4- Volte uma pasta e clone o projeto
+cd ..
+git clone https://github.com/giulio7771/desafio_serasa_proway.git
+
+5- Entre no container de trabalho
+docker exec -it laradock_workspace_1 bash
+
+6- Entre na pasta do projeto altera a permissão de storage e cache:
+cd desafio_serasa_proway
+chmod -R 755 storage bootstrap/cache
+
+7- Saia do bash e altere o dono da pasta do projeto:
+exit
+chmod -R 755 storage bootstrap/cache
+
+8- Configure o dns local da aplicação:
+cd laradock/nginx/sites/
+cp laravel.conf.example serasa.conf
+nano serasa.conf
+
+9- No editor de texto altere a a linha 11 e 12 para ficarem da seguinte forma:
+	server_name serasa.test
+	root /var/www/desafio_serasa_proway/public
+Para confirmar as alterações com o editor nano: ctrl + O, e para sair ctrl + x
+
+10- Volte para a pasta do laradock e reinicie os containers:
+cd ..
+cd ..
+docker-compose restart
+
+11- Adicione o server_name no arquivo de hosts. Edite o arquivo /etc/hosts 
+para conter a linha: 127.0.1.1 serasa.test
+nano /etc/hosts
+ctrl + o, ctrl + x
+
+12- Configure o Banco de dados como consta no tutorial na medium:
 <br>
 https://medium.com/@thicolares/como-configurar-um-ambiente-completo-php-nginx-mysql-e-phpmyadmin-para-projetos-laravel-usando-99954285351e
 <br>
