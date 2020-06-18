@@ -4,8 +4,7 @@ namespace App\Services;
 
 use Illuminate\Support\ServiceProvider;
 use App\Services\{
-    ConfiabilidadePontuacaoInterface,
-    ArredondamentoProvider
+    ConfiabilidadePontuacaoInterface
 };
 
 class NotaFiscalProvider implements ConfiabilidadePontuacaoInterface
@@ -20,7 +19,6 @@ class NotaFiscalProvider implements ConfiabilidadePontuacaoInterface
             $acresimo = $pontuacao * 0.02;
             $pontuacao = floor($pontuacao + $acresimo);
         }
-        echo "q-$qtd";
         return $pontuacao;
     }
 }

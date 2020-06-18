@@ -3,8 +3,7 @@
 namespace App\Services;
 
 use App\Services\{
-    ConfiabilidadePontuacaoInterface,
-    ArredondamentoProvider
+    ConfiabilidadePontuacaoInterface
 };
 
 class DebitoProvider implements ConfiabilidadePontuacaoInterface
@@ -19,8 +18,6 @@ class DebitoProvider implements ConfiabilidadePontuacaoInterface
             $decresimo = $pontuacao * 0.04;
             $pontuacao = ceil($pontuacao - $decresimo);
         }
-        echo "e$qtd";
-        echo "pontuacao ini: $pontuacaoInicial";
         return $pontuacao;
     }
 }
