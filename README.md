@@ -11,6 +11,11 @@ Para instalar o laradock no Ubuntu sugiro esse tutorial: https://medium.com/@thi
 <br>
 Setup<br>
 <br>
-Tendo o laradock instalado, configurado (vide tutorial), e os containers rodando (docker-compose up -d nginx mysql), entre no container do laradock: <br>
-<h5>docker exec -it laradock_workspace_1 bash<h5>
+Tendo o projeto clonado, laradock instalado, configurado (vide tutorial), e os containers rodando (docker-compose up -d nginx mysql), crie o banco de dados "serasa" no servidor MySQL do Laradock.<br> 
+Entre no container do laradock: <br>
+<h5>docker exec -it laradock_workspace_1 bash</h5>
 <br>
+Caminhe até o diretório raiz do projeto. Depende de como você estrutura o esquema de pastas, no meu caso fica em /var/www/projects/serasa:
+<h5>cd projects/serasa</h5>
+Então executa a migração e o semeamento com:<br>
+<h5>php artisan migrate --seed</h5>
